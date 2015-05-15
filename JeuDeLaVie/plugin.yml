@@ -1,0 +1,8 @@
+name: JeDeLaVie
+version: 1
+main: ch.reaamz.jeudelavie.JeuDeLaVie
+
+commands:
+ jdlv:
+  description: Permet de demmarer le jeu
+  usage: /<command> start:stop:reset:settime[settime period]
