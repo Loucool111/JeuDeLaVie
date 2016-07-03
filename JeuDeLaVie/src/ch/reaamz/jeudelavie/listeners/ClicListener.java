@@ -15,9 +15,9 @@ public class ClicListener implements Listener
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent event)
 	{
-		if (event.getPlayer().getInventory().getItemInHand() != null)
+		if (event.getPlayer().getInventory().getItemInMainHand() != null)
 		{
-			if (event.getPlayer().getInventory().getItemInHand().getType().equals(Utils.CLIC_ITEM))
+			if (event.getPlayer().getInventory().getItemInMainHand().getType().equals(Utils.CLIC_ITEM))
 			{
 				if (event.getAction().equals(Action.LEFT_CLICK_BLOCK))
 				{
