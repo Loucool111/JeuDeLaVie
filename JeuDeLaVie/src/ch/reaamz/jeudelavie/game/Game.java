@@ -21,7 +21,7 @@ public class Game
 	
 	public static Block[][] blocks;
 	
-	private static int id = -1;
+	private static int taskid = -1;
 	
 	public static boolean isStarted = false;
 	
@@ -112,7 +112,7 @@ public class Game
 			return;
 		}
 		
-		id = Bukkit.getScheduler().scheduleSyncRepeatingTask(JeuDeLaVie.instance, new Runnable()
+		taskid = Bukkit.getScheduler().scheduleSyncRepeatingTask(JeuDeLaVie.instance, new Runnable()
 		{
 			HashMap<Block, Boolean> isGoingToDie = Maps.newHashMap();
 			HashMap<Block, Boolean> isGoingToCreateNewOne = Maps.newHashMap();
@@ -127,12 +127,12 @@ public class Game
 						isGoingToDie.put(blc, false);
 						isGoingToCreateNewOne.put(blc, false);
 						
-						if (blc.getType().equals(Utils.GAME_BLOCK) && (getNeibours(blc) < 2 || getNeibours(blc) > 3))
+						if (blc.getType().equals(Utils.GAME_BLOCK) && (getNeighbours(blc) < 2 || getNeighbours(blc) > 3))
 						{
 							isGoingToDie.put(blc, true);
 						}
 						
-						if (blc.getType().equals(Utils.BASE_BLOCK) && getNeibours(blc) == 3)
+						if (blc.getType().equals(Utils.BASE_BLOCK) && getNeighbours(blc) == 3)
 						{
 							isGoingToCreateNewOne.put(blc, true);
 						}
@@ -151,10 +151,10 @@ public class Game
 	
 	public static boolean stop()
 	{
-		if (id != -1)
+		if (taskid != -1)
 		{
-			Bukkit.getScheduler().cancelTask(id);
-			id = -1;
+			Bukkit.getScheduler().cancelTask(taskid);
+			taskid = -1;
 			isStarted = false;
 			return true;
 		}
@@ -181,7 +181,7 @@ public class Game
 		}
 	}
 	
-	private static int getNeibours(Block block)
+	private static int getNeighbours(Block block)
 	{
 		int counter = 0;
 		
