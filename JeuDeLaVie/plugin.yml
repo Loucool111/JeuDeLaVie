@@ -1,8 +1,9 @@
-name: JeDeLaVie
-version: 1
+name: JeuDeLaVie
+version: 1.0.0
 main: ch.reaamz.jeudelavie.JeuDeLaVie
-
+author: Reaamz
+website: https://github.com/Loucool111/
 commands:
- jdlv:
-  description: Permet de demmarer le jeu
-  usage: /<command> start:stop:reset:settime[settime period]
+   jdlv:
+      description: Permet de contrôler le jeu
+      usage: /jdlv (start | stop | reset | settime <duration>)
